@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/lock_screen_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.sdkv2.slidebutton.SwipeButton
+        android:layout_alignParentBottom="true"
+        android:id="@id/action_bar_root"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="#E96251"
+        android:gravity="center"
+        android:text=">>> Swipe to unlock >>>"
+        android:textColor="#FFFFFF"/>
+
+    <com.sdkv2.clock.ClockView
+        android:layout_centerHorizontal="true"
+        android:id="@id/action_bar_container"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="5dp"/>
+</RelativeLayout>
