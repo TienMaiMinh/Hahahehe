@@ -13,7 +13,8 @@ public class StartLockscreenReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		Random random = new Random();
 		int n  = random.nextInt(10);
-		if (n<4){
+		Log.e("test","random = " + n);
+		if (n<8 && SharedPreferencesUtil.isShowing(context,"showing") == false){
 			Intent lockscreenIntent = new Intent(context, LockActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			context.startActivity(lockscreenIntent);
 		}

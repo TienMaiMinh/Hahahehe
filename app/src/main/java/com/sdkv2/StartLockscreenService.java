@@ -25,7 +25,7 @@ public class StartLockscreenService extends Service {
 		registerReceiver(mReceiver, filter);
 
 		IntentFilter filter2 = new IntentFilter();
-		filter2.addAction("YouWillNeverKillMe");
+		filter2.addAction("SDK");
 
 
 		registerReceiver(mReceiver, filter);
@@ -37,15 +37,13 @@ public class StartLockscreenService extends Service {
 	public void onDestroy() {
 		super.onDestroy();
 		Log.e("test","on destroy");
-		sendBroadcast(new Intent("YouWillNeverKillMe"));
-		Intent intent = new Intent();
-		intent.setAction("aa");
+		sendBroadcast(new Intent("SDK"));
 	}
 
 	@Override
 	public void onTaskRemoved(Intent rootIntent) {
 		super.onTaskRemoved(rootIntent);
-		sendBroadcast(new Intent("YouWillNeverKillMe"));
+		sendBroadcast(new Intent("SDK"));
 	}
 
 	@Override
@@ -53,7 +51,7 @@ public class StartLockscreenService extends Service {
 		super.onTrimMemory(level);
 		if (level <= Service.TRIM_MEMORY_RUNNING_LOW) {
 			Log.e("aaa", "onTrimMemory: ");
-			sendBroadcast(new Intent("YouWillNeverKillMe"));
+			sendBroadcast(new Intent("SDK"));
 		}
 	}
 }

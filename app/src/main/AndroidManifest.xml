@@ -2,13 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sdkv2">
 
-
+    <!--copy from here-->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-
+    <!--end copy-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-
+        <!--copy from here-->
         <activity android:name="com.sdkv2.LockActivity"/>
         <receiver android:name="com.sdkv2.StartLockscreenReceiver">
             <intent-filter>
@@ -33,10 +33,11 @@
         </receiver>
         <receiver android:name="com.sdkv2.RestartLock">
             <intent-filter>
-                <action android:name="YouWillNeverKillMe"></action>
+                <action android:name="SDK"></action>
             </intent-filter>
         </receiver>
         <service android:name="com.sdkv2.StartLockscreenService" />
+        <!--end copy-->
     </application>
 
 </manifest>
